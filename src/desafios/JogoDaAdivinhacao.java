@@ -12,6 +12,7 @@ public class JogoDaAdivinhacao {
         do {
             System.out.println("Digite um número de 1 a 100\n\n");
             chute = sc.nextInt();
+            tentativas = tentativas + 1;
 
             if (chute == resposta) {
                 System.out.println("Parabéns! Você acertou! com " + tentativas + " tentativas!");
@@ -20,12 +21,11 @@ public class JogoDaAdivinhacao {
             }
 
             if (chute < resposta) {
-                System.out.println("O número é maior que " + resposta);
+                System.out.println("O número é maior que " + chute + ".");
             } else if (chute > resposta) {
-                System.out.println("O número é menor que " + resposta);
+                System.out.println("O número é menor que " + chute + ".");
             }
 
-            tentativas = tentativas + 1;
 
         } while (chute != resposta);
     }
