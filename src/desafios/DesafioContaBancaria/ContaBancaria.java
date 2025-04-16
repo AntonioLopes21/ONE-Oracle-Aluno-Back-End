@@ -7,6 +7,7 @@ class ContaBancaria {
     String tipoConta;
 
     public ContaBancaria() {}
+    Scanner sc = new Scanner(System.in);
 
     public ContaBancaria(String tipoConta) {
         this.tipoConta = tipoConta;
@@ -29,6 +30,9 @@ class ContaBancaria {
     }
 
     public void receberValor(double valor) {
+        System.out.println("Digite o valor que deseja colocar na conta:");
+        valor = sc.nextDouble();
+
         if (valor <= 0) {
             System.out.println("Você não pode depositar um valor negativo para sua conta." +
                     "\nSaldo: R$ " + valor);
@@ -40,6 +44,10 @@ class ContaBancaria {
     }
 
     public void sacarValor(double valor) {
+
+        System.out.println("Digite o valor que deseja sacar:");
+        valor = sc.nextDouble();
+
         if (valor <= 0) {
             System.out.println("Você não pode sacar um valor negativo");
         } else {
