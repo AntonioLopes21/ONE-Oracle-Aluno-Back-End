@@ -89,8 +89,10 @@ class ContaBancaria {
 
                 case 4:
                     System.out.println("************************************");
+                    escolha = false;
                     System.out.println("Obrigado por utilizar nosso serviço de bancos!");
                     System.out.println("************************************");
+
                     break;
 
                 default:
