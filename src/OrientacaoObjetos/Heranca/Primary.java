@@ -1,8 +1,10 @@
-package OrientacaoObjetos.Encapsulamento;
+package OrientacaoObjetos.Heranca;
 
-public class Main {
+import OrientacaoObjetos.EncapsulamentoEHeranca.FilmeEncapsulamento;
+
+public class Primary {
     public static void main(String[] args) {
-        FilmeEncapsulamento novoFilme = new FilmeEncapsulamento();
+        OrientacaoObjetos.EncapsulamentoEHeranca.FilmeEncapsulamento novoFilme = new FilmeEncapsulamento("Filme");
 
         novoFilme.setNome("Paulin o retorno");
         novoFilme.setDescricao("Filme lançamento de 2025");
@@ -12,6 +14,8 @@ public class Main {
         novoFilme.somaAvaliacoes(3);
         novoFilme.somaAvaliacoes(1);
 
+        //herança de filme
+        SerieHeranca novaSerie = new SerieHeranca();
 
 
         System.out.println(novoFilme.getNome());
