@@ -1,6 +1,8 @@
 package OrientacaoObjetos.EncapsulamentoEHeranca;
 
-public class FilmeEncapsulamento extends Media{
+import OrientacaoObjetos.EncapsulamentoEHeranca.modeloCalculos.Classificavel;
+
+public class FilmeEncapsulamento extends Media implements Classificavel {
     private String diretor;
 
     public FilmeEncapsulamento(String tipoMedia) {
@@ -13,5 +15,12 @@ public class FilmeEncapsulamento extends Media{
 
     public void setDiretor(String diretor) {
         this.diretor = diretor;
+    }
+
+
+    //polimorfismo
+    @Override
+    public int getClassificacao() {
+        return (int) getMediaAvaliacao() /2;
     }
 }
