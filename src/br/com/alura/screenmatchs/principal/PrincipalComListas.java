@@ -17,6 +17,9 @@ public class PrincipalComListas {
         var minhaSerie = new Filme("The big bang theory", 1923);
         minhaSerie.avalia(10);
 
+        //variável de referência - polimorfismo
+        Filme f1 = minhaSerie;
+
         listaAssistiveis.add(meuFilme);
         listaAssistiveis.add(filme2);
         listaAssistiveis.add(minhaSerie);
@@ -31,10 +34,16 @@ public class PrincipalComListas {
         //foreach
         System.out.println("\n\n\nfor each fora da lista");
         for (Titulo item : listaAssistiveis) {
-            System.out.println(item);
+            System.out.println(item.getNome());
+
+            if (item instanceof Filme) {
+                System.out.println("Classificação: " + ((Filme) item).getClassificacao( ) );
+
+            }
             Filme filme = (Filme) item;
 
-            System.out.println("Classificação: " + filme.getClassificacao() );
+
+
         }
 
 
