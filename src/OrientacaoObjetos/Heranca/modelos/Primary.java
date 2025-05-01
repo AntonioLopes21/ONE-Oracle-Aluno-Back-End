@@ -1,10 +1,11 @@
-package OrientacaoObjetos.Heranca;
+package OrientacaoObjetos.Heranca.modelos;
 
-import OrientacaoObjetos.EncapsulamentoEHeranca.FilmeEncapsulamento;
+import OrientacaoObjetos.EncapsulamentoEHeranca.modelos.FilmeEncapsulamento;
+import OrientacaoObjetos.EncapsulamentoEHeranca.modelos.Serie;
 
 public class Primary {
     public static void main(String[] args) {
-        OrientacaoObjetos.EncapsulamentoEHeranca.FilmeEncapsulamento novoFilme = new FilmeEncapsulamento("Filme");
+        FilmeEncapsulamento novoFilme = new FilmeEncapsulamento("The big bang theory", "Série");
 
         novoFilme.setNome("Paulin o retorno");
         novoFilme.setDescricao("Filme lançamento de 2025");
@@ -16,9 +17,9 @@ public class Primary {
 
         //herança de filme
         SerieHeranca novaSerie = new SerieHeranca();
-
-
         System.out.println(novoFilme.getNome());
 
+
+        var filmeFavorito = new Serie("The simpsons", "Série", 20, 30, 15);
     }
 }

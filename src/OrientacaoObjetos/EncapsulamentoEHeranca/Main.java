@@ -1,14 +1,13 @@
 package OrientacaoObjetos.EncapsulamentoEHeranca;
 
-import OrientacaoObjetos.EncapsulamentoEHeranca.modeloCalculos.CalculadoraTempo;
 import OrientacaoObjetos.EncapsulamentoEHeranca.modeloCalculos.FiltroRecomendacao;
-import OrientacaoObjetos.Filme;
+import OrientacaoObjetos.EncapsulamentoEHeranca.modelos.Serie;
 
 public class Main {
     public static void main(String[] args) {
 
         FiltroRecomendacao filtro = new FiltroRecomendacao();
-        Serie twd = new Serie("Série", 10, 5, 50);
+        Serie twd = new Serie("The last of us", "Série", 5, 50, 40);
         Episodio episodio = new Episodio();
 
         episodio.setNumero(1);

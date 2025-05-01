@@ -1,18 +1,18 @@
 package manipulacaoListas;
 
-import OrientacaoObjetos.EncapsulamentoEHeranca.FilmeEncapsulamento;
+import OrientacaoObjetos.EncapsulamentoEHeranca.modelos.FilmeEncapsulamento;
 
 import java.util.ArrayList;
 
 public class ManipularLista {
     public static void main(String[] args) {
-        FilmeEncapsulamento filme = new FilmeEncapsulamento("Filme");
+        FilmeEncapsulamento filme = new FilmeEncapsulamento("Avatar", "Filme");
         filme.setNome("Titanic");
         filme.setDescricao("um filme onde o barco afunda.");
         filme.setDuracaoEmMinutos(100);
 
 
-        var meuFilme = new FilmeEncapsulamento("Filme");
+        var meuFilme = new FilmeEncapsulamento("A bruxa de blair", "Filme");
         meuFilme.setDuracaoEmMinutos(300);
         meuFilme.setNome("CHIPS");
         meuFilme.setMediaAvaliacao(10);

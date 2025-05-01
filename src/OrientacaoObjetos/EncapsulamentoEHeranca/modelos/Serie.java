@@ -1,4 +1,4 @@
-package OrientacaoObjetos.EncapsulamentoEHeranca;
+package OrientacaoObjetos.EncapsulamentoEHeranca.modelos;
 
 public class Serie extends Media{
     int temporada;
@@ -7,8 +7,8 @@ public class Serie extends Media{
     private int quantidadeDeTemporadas;
     private int tempoDeEpisodio;
 
-    public Serie(String tipoMedia, int episodiosPorTemporada, int quantidadeDeTemporadas, int tempoDeEpisodioEmMinutos) {
-        super(tipoMedia);
+    public Serie(String nome, String tipoMedia, int episodiosPorTemporada, int quantidadeDeTemporadas, int tempoDeEpisodioEmMinutos) {
+        super(nome, tipoMedia);
         this.episodiosPorTemporada = episodiosPorTemporada;
         this.quantidadeDeTemporadas = quantidadeDeTemporadas;
         this.tempoDeEpisodio = tempoDeEpisodioEmMinutos;

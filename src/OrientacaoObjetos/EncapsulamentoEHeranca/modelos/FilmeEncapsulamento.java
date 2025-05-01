@@ -1,12 +1,12 @@
-package OrientacaoObjetos.EncapsulamentoEHeranca;
+package OrientacaoObjetos.EncapsulamentoEHeranca.modelos;
 
 import OrientacaoObjetos.EncapsulamentoEHeranca.modeloCalculos.Classificavel;
 
 public class FilmeEncapsulamento extends Media implements Classificavel {
     private String diretor;
 
-    public FilmeEncapsulamento(String tipoMedia) {
-        super(tipoMedia);
+    public FilmeEncapsulamento(String nome, String tipoMedia) {
+        super(nome, tipoMedia);
     }
 
     public String getDiretor() {

@@ -1,4 +1,4 @@
-package OrientacaoObjetos.Heranca;
+package OrientacaoObjetos.Heranca.modelos;
 
 public class FilmeEncapsulamento {
     private String nome;

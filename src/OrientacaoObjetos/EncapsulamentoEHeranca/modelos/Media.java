@@ -1,4 +1,4 @@
-package OrientacaoObjetos.EncapsulamentoEHeranca;
+package OrientacaoObjetos.EncapsulamentoEHeranca.modelos;
 
 public class Media {
     private String nome;
@@ -9,6 +9,9 @@ public class Media {
     private int duracaoEmMinutos;
     private int somatorioAvaliacoes = 0;
 
+    public Media (String nome, String tipoMedia) {
+
+    }
 
     public int getDuracaoEmMinutos() {
         return duracaoEmMinutos;

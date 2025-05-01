@@ -1,8 +1,8 @@
 package OrientacaoObjetos.EncapsulamentoEHeranca.modeloCalculos;
 
-import OrientacaoObjetos.EncapsulamentoEHeranca.FilmeEncapsulamento;
-import OrientacaoObjetos.EncapsulamentoEHeranca.Media;
-import OrientacaoObjetos.EncapsulamentoEHeranca.Serie;
+import OrientacaoObjetos.EncapsulamentoEHeranca.modelos.FilmeEncapsulamento;
+import OrientacaoObjetos.EncapsulamentoEHeranca.modelos.Media;
+import OrientacaoObjetos.EncapsulamentoEHeranca.modelos.Serie;
 
 import java.util.ArrayList;
 import java.util.List;

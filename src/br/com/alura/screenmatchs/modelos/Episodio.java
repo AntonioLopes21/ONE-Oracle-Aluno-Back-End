@@ -1,12 +1,12 @@
-package OrientacaoObjetos.EncapsulamentoEHeranca;
+package br.com.alura.screenmatchs.modelos;
 
-import OrientacaoObjetos.EncapsulamentoEHeranca.modeloCalculos.Classificavel;
-import OrientacaoObjetos.EncapsulamentoEHeranca.modelos.Serie;
+import br.com.alura.screenmatchs.calculos.Classificavel;
 
 public class Episodio implements Classificavel {
     private int numero;
     private String nome;
     private Serie serie;
+    private int totalVisualizacoes;
 
     public int getTotalVisualizacoes() {
         return totalVisualizacoes;
@@ -16,22 +16,12 @@ public class Episodio implements Classificavel {
         this.totalVisualizacoes = totalVisualizacoes;
     }
 
-    private int totalVisualizacoes;
-
     public int getNumero() {
         return numero;
     }
 
     public void setNumero(int numero) {
         this.numero = numero;
-    }
-
-    public Serie getSerie() {
-        return serie;
-    }
-
-    public void setSerie(Serie serie) {
-        this.serie = serie;
     }
 
     public String getNome() {
@@ -42,10 +32,17 @@ public class Episodio implements Classificavel {
         this.nome = nome;
     }
 
-    //polimorfismo
+    public Serie getSerie() {
+        return serie;
+    }
+
+    public void setSerie(Serie serie) {
+        this.serie = serie;
+    }
+
     @Override
     public int getClassificacao() {
-        if(totalVisualizacoes > 100) {
+        if (totalVisualizacoes > 100) {
             return 4;
         } else {
             return 2;
