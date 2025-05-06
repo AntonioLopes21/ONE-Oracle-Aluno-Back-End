@@ -1,5 +1,11 @@
 package ConsumoAPI;
 
+import br.com.alura.screenmatchs.modelos.Titulo;
+import br.com.alura.screenmatchs.modelos.TituloOmdb;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -26,6 +32,23 @@ public class ConsumoAPI {
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
         System.out.println(response.body());
+
+
+        //Gson dependência importada na project structure
+        //sistema de gerenciamento de pacotes
+        //maven, gradle
+        String json = response.body();
+
+        Gson gson =  new GsonBuilder().setFieldNamingPolicy
+                (FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+        //Titulo meuTitulo = gson.fromJson(json, Titulo.class);
+        TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
+        System.out.println(meuTituloOmdb);
+
+        //data transfer object
+        Titulo meuTitulo = new Titulo(meuTituloOmdb);
+
+        System.out.println("Titulo já convertido:" + meuTitulo);
     }
 
 
