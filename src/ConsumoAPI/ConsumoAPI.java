@@ -1,5 +1,6 @@
 package ConsumoAPI;
 
+import br.com.alura.screenmatchs.excecao.ErroDeConversaoDeAnoException;
 import br.com.alura.screenmatchs.modelos.Titulo;
 import br.com.alura.screenmatchs.modelos.TituloOmdb;
 import com.google.gson.FieldNamingPolicy;
@@ -21,34 +22,50 @@ public class ConsumoAPI {
         System.out.println("Digite o título do filme que deseja buscar: ex (nome+sobrenome) sem espaços");
         tituloFilme = scan.nextLine();
 
-        var endereco = "http://www.omdbapi.com/?t="+ tituloFilme +"&apikey=1f4e86ab";
+        var endereco = "http://www.omdbapi.com/?t="+ tituloFilme.replace(" " , "+") +"&apikey=1f4e86ab";
 
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(endereco)) //caminho dinâmico
-                .build();
-
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
-
-        System.out.println(response.body());
+        try {
 
 
-        //Gson dependência importada na project structure
-        //sistema de gerenciamento de pacotes
-        //maven, gradle
-        String json = response.body();
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(endereco)) //caminho dinâmico
+                    .build();
 
-        Gson gson =  new GsonBuilder().setFieldNamingPolicy
-                (FieldNamingPolicy.UPPER_CAMEL_CASE).create();
-        //Titulo meuTitulo = gson.fromJson(json, Titulo.class);
-        TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
-        System.out.println(meuTituloOmdb);
+            HttpResponse<String> response = client
+                    .send(request, HttpResponse.BodyHandlers.ofString());
 
-        //data transfer object
-        Titulo meuTitulo = new Titulo(meuTituloOmdb);
+            System.out.println(response.body());
 
-        System.out.println("Titulo já convertido:" + meuTitulo);
+
+            //Gson dependência importada na project structure
+            //sistema de gerenciamento de pacotes
+            //maven, gradle
+            String json = response.body();
+
+            Gson gson =  new GsonBuilder().setFieldNamingPolicy
+                    (FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+            //Titulo meuTitulo = gson.fromJson(json, Titulo.class);
+            TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
+            System.out.println(meuTituloOmdb);
+
+
+            //try {
+            Titulo meuTitulo = new Titulo(meuTituloOmdb);
+            //data transfer object
+            System.out.println("Titulo já convertido:" + meuTitulo);
+
+
+        } catch (NumberFormatException e) {
+            System.out.println("Erro de formatação do número:\n " + e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro ao pesquisar URI com espaços. Verifique o formato de endereço na qual você precisa pesquisar. (nome+sobrenome)\n " + e.getMessage());
+        } catch (ErroDeConversaoDeAnoException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("O programa finalizou corretamente.");
+
     }
 
 
