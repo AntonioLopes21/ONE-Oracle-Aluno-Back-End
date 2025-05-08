@@ -1,0 +1,4 @@
+[
+  "{\n  \"cep\": \"01253-010\",\n  \"logradouro\": \"Rua Pombal\",\n  \"complemento\": \"\",\n  \"unidade\": \"\",\n  \"bairro\": \"Sumaré\",\n  \"localidade\": \"São Paulo\",\n  \"uf\": \"SP\",\n  \"estado\": \"São Paulo\",\n  \"regiao\": \"Sudeste\",\n  \"ibge\": \"3550308\",\n  \"gia\": \"1004\",\n  \"ddd\": \"11\",\n  \"siafi\": \"7107\"\n}",
+  "{\n  \"cep\": \"50630-120\",\n  \"logradouro\": \"Rua Manoel Moreira\",\n  \"complemento\": \"\",\n  \"unidade\": \"\",\n  \"bairro\": \"Cordeiro\",\n  \"localidade\": \"Recife\",\n  \"uf\": \"PE\",\n  \"estado\": \"Pernambuco\",\n  \"regiao\": \"Nordeste\",\n  \"ibge\": \"2611606\",\n  \"gia\": \"\",\n  \"ddd\": \"81\",\n  \"siafi\": \"2531\"\n}"
+]
